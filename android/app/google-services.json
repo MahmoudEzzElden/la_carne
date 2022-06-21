@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1079846027820",
+    "project_id": "lacarne-5ff78",
+    "storage_bucket": "lacarne-5ff78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079846027820:android:da14546b5ac63f5e448789",
+        "android_client_info": {
+          "package_name": "com.example.la_carne"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1079846027820-hfn5v84o2pnpkosaqf73aaqrboj58bcq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwky9RMJOqSRcovZmpA6kPEh4TQc5ENc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1079846027820-hfn5v84o2pnpkosaqf73aaqrboj58bcq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
