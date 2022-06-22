@@ -6,6 +6,7 @@ import 'package:la_carne/view/screens/cart.dart';
 import 'package:la_carne/view/screens/favourites.dart';
 import 'package:la_carne/view/screens/home_page.dart';
 import 'package:la_carne/view/screens/onBoarding.dart';
+import 'package:la_carne/view/screens/product_details_page.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
       routes: {
         HomePage.routeName:(context)=>HomePage(),
         Cart.routeName:(context)=>Cart(),
-        Favourites.routeName:(context)=>Favourites()
+        Favourites.routeName:(context)=>Favourites(),
+        ProductDetails.routeName:(context)=>ProductDetails(),
       },
       title: 'Flutter Demo',
       theme: ThemeData(

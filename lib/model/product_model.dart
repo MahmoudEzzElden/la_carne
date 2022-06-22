@@ -1,16 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:la_carne/services/constant.dart';
 
 class ProductModel{
-List<Product> products=[];
-ProductModel.fromJson(documents) {
-  products = <Product>[];
- documents.forEach((v) {
-    products.add(Product.fromJson(v));
-  });
-}
-}
-
-class Product{
   String? name;
   String? weight;
   String? url;
@@ -19,7 +10,7 @@ class Product{
   bool? inFavourites;
   bool? inCarts;
 
-  Product(
+  ProductModel(
       {this.name,
         this.weight,
         this.url,
@@ -28,8 +19,8 @@ class Product{
         this.inFavourites,
         this.inCarts});
 
-  factory Product.fromJson(Map<String, dynamic> json) {
-    return Product(
+  factory ProductModel.fromJson(QueryDocumentSnapshot<Map<String, dynamic>> json) {
+    return ProductModel(
         name: json[productName],
         weight: json[productWeight],
         url: json[imageUrl],
