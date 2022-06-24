@@ -1,18 +1,27 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:la_carne/controller/product_provider.dart';
 import 'package:la_carne/services/constant.dart';
 import 'package:la_carne/services/firebase_handler.dart';
 import 'package:la_carne/view/widgets/cart_product_card.dart';
+import 'package:provider/provider.dart';
 
-class Cart extends StatelessWidget {
+class Cart extends StatefulWidget {
   static const String routeName = 'Cart';
 
   const Cart({Key? key}) : super(key: key);
 
   @override
+  State<Cart> createState() => _CartState();
+}
+
+class _CartState extends State<Cart> {
+  @override
   Widget build(BuildContext context) {
-    double resu = 0;
+    Provider.of<ProductProvider>(context,listen: false).getTotalPrice();
+    final formatCurrency = new NumberFormat.currency(symbol: 'EGP');
     return Scaffold(
       backgroundColor: Colors.black12,
       appBar: AppBar(
@@ -33,43 +42,33 @@ class Cart extends StatelessWidget {
               stream: FirebaseHandler.getCart(),
               builder: (context, snapshot) {
                 return snapshot.hasData
-                    ? Container(
-
-                        child: ListView.builder(
-                            itemCount: snapshot.requireData.size,
-                            itemBuilder: (context, index) {
-                              // if (snapshot.requireData.size != 0) {
-                              //   (resu += snapshot.requireData.docs[index]
-                              //           [productPrice] *
-                              //       snapshot.requireData.docs[index]
-                              //           [quantityInCart]);
-                              // }
-
-                              return snapshot.requireData.size == 0
-                                  ? Center(
-                                      child: Text(
-                                        'There is no items in the cart',
-                                        style: TextStyle(
-                                            fontSize: 24, color: Colors.white),
-                                      ),
-                                    )
-                                  : GestureDetector(
-                                      onTap: () {},
-                                      child: CartProduct(
-                                        imageUrl: snapshot
-                                            .requireData.docs[index][imageUrl],
-                                        productPrices: snapshot.requireData
-                                            .docs[index][productPrice],
-                                        productNames: snapshot.requireData
-                                            .docs[index][productName],
-                                        productWeights: snapshot.requireData
-                                            .docs[index][productWeight],
-                                        quantInCart: snapshot.requireData
-                                            .docs[index][quantityInCart],
-                                      ),
-                                    );
-                            }),
-                      )
+                    ? snapshot.requireData.docs.isNotEmpty
+                        ? Container(
+                            child: ListView.builder(
+                                itemCount: snapshot.requireData.size,
+                                itemBuilder: (context, index) {
+                                  return GestureDetector(
+                                    onTap: () {},
+                                    child: CartProduct(
+                                      imageUrl: snapshot.requireData.docs[index]
+                                          [imageUrl],
+                                      productPrices: snapshot.requireData
+                                          .docs[index][productPrice],
+                                      productNames: snapshot
+                                          .requireData.docs[index][productName],
+                                      productWeights: snapshot.requireData
+                                          .docs[index][productWeight],
+                                      quantInCart: snapshot.requireData
+                                          .docs[index][quantityInCart],
+                                    ),
+                                  );
+                                }),
+                          )
+                        : Center(
+                            child: Text(
+                            'There is no items in the cart',
+                            style: TextStyle(fontSize: 24, color: Colors.white),
+                          ))
                     : snapshot.hasError
                         ? Center(
                             child: Text(snapshot.error.toString()),
@@ -87,8 +86,10 @@ class Cart extends StatelessWidget {
                 ),
                 backgroundColor: MaterialStateProperty.all(Color(0xFFEF4444))),
             onPressed: () {},
-            child: Text(
-              "$resu",
+            child:  Provider.of<ProductProvider>(context).totalPrice ==null? Text('0.0'):
+
+            Text(
+              "${formatCurrency.format(Provider.of<ProductProvider>(context).totalPrice) }",
               style: TextStyle(color: Colors.white),
             ),
           ),

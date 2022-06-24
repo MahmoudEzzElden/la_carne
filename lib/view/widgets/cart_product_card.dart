@@ -3,7 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:la_carne/view/screens/tab_bar_pages/cold_cuts.dart';
+import 'package:provider/provider.dart';
 
+import '../../controller/product_provider.dart';
 import '../../services/constant.dart';
 import '../../services/firebase_handler.dart';
 
@@ -79,6 +81,9 @@ class CartProduct extends StatelessWidget {
                   } else {
                     FirebaseHandler.quantityInCartUpdate(
                         productNames!, quantInCart! - 1);
+                    // Provider.of<ProductProvider>(context, listen: false)
+                    //     .decreasePrice(
+                    //    productPrices);
                     if (quantInCart == 1) {
                       FirebaseHandler.addAndRemoveCart(productNames!, false);
                     }
@@ -106,6 +111,9 @@ class CartProduct extends StatelessWidget {
                 onPressed: () {
                   FirebaseHandler.quantityInCartUpdate(
                       productNames!, quantInCart! + 1);
+                  // Provider.of<ProductProvider>(context, listen: false)
+                  //     .increasePrice(
+                  //    productPrices);
                 },
                 child: Icon(
                   Icons.add,

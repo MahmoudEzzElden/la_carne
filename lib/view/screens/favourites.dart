@@ -26,7 +26,8 @@ class _FavouritesState extends State<Favourites> {
         stream: FirebaseHandler.getFavouriteProducts(),
         builder: (context, snapshot) {
           return snapshot.hasData
-              ? Container(
+              ? snapshot.requireData.docs.isNotEmpty ?
+          Container(
             padding: EdgeInsets.all(10),
             child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -37,7 +38,8 @@ class _FavouritesState extends State<Favourites> {
               ),
               itemCount: snapshot.requireData.size,
               itemBuilder: (context, index) {
-                return GestureDetector(
+                return
+                  GestureDetector(
                   onTap: () {
                     int quant=snapshot.requireData.docs[index][quantityInCart];
                     FirebaseHandler.quantityInCartUpdate(
@@ -58,9 +60,10 @@ class _FavouritesState extends State<Favourites> {
                     [productPrice],
                   ),
                 );
+
               },
             ),
-          )
+          ): Center(child: Text('No Items In Favourites',style: TextStyle(fontSize: 24),),)
               : snapshot.hasError
               ? Center(
             child: Text(snapshot.error.toString()),

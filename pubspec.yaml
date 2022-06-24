@@ -73,6 +73,9 @@ flutter:
     - assets/pageone.png
     - assets/pagetwoo.png
     - assets/pagethree.png
+    - assets/info1.jpg
+    - assets/info2.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

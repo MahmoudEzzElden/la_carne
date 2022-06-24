@@ -14,7 +14,6 @@ class ProductDetails extends StatelessWidget {
         title: Text(args[1]),
       ),
       body: Container(
-
         padding: EdgeInsets.all(20),
         child: Column(
          crossAxisAlignment: CrossAxisAlignment.start,

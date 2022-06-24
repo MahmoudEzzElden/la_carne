@@ -2,6 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:la_carne/controller/onboarding_provider.dart';
+import 'package:la_carne/controller/product_provider.dart';
 import 'package:la_carne/view/screens/cart.dart';
 import 'package:la_carne/view/screens/favourites.dart';
 import 'package:la_carne/view/screens/home_page.dart';
@@ -10,7 +11,6 @@ import 'package:la_carne/view/screens/product_details_page.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'controller/product_card_provider.dart';
 late final goHome;
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,8 +25,8 @@ Future<void> main() async{
       providers: [
         ChangeNotifierProvider<OnBoardingProvider>(
             create: (context) => OnBoardingProvider()),
-        ChangeNotifierProvider<CardProvider>(
-            create: (context) => CardProvider()),
+        ChangeNotifierProvider<ProductProvider>(
+            create: (context) => ProductProvider()),
       ]
   ));
 }
