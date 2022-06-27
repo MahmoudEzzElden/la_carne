@@ -49,6 +49,11 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.9.0
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/lacarne.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -75,6 +80,7 @@ flutter:
     - assets/pagethree.png
     - assets/info1.jpg
     - assets/info2.jpg
+    - assets/lacarne.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

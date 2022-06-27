@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-
+  
 class ProductDetails extends StatelessWidget {
   static const routeName='ProductDetails';
   const ProductDetails({Key? key}) : super(key: key);

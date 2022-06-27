@@ -101,9 +101,6 @@ class ProductCard extends StatelessWidget {
                         }
                         else{
                           FirebaseHandler.quantityInCartUpdate(productNames!, quantInCart!-1);
-                          // Provider.of<ProductProvider>(context, listen: false)
-                          //     .decreasePrice(
-                          //     productPrices);
                           if(quantInCart==1){
                             FirebaseHandler.addAndRemoveCart(productNames!, false);
                           }

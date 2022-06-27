@@ -63,21 +63,8 @@ class Splash extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
       backgroundColor: Color(0xFFD69D9D),
-        splashIconSize: 200,
-        splash: Center(
-          child: Container(
-            child: Column(
-              children: [
-
-                CircleAvatar(
-                  radius: 100,
-                 backgroundColor: Color(0xFFEF4444),
-                  child: Text('La Carne',style: TextStyle(fontSize: 20,fontStyle: FontStyle.italic),),
-                )
-              ],
-            ),
-          ),
-        ),
+        splashIconSize: 400,
+        splash: Image.asset('assets/lacarne.png'),
         nextScreen:(goHome==false || goHome==null) ?  OnBoarding():HomePage());
   }
 }
