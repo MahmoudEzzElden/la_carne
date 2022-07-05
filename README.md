@@ -1,16 +1,50 @@
-# la_carne
+# La Carne
+> E-Commerce app its purpose is selling meat products to customers.
 
-A new Flutter project.
+## Table of Contents
+* [Technologies Used](#technologies-used)
+* [Screenshots](#screenshots)
+* [Acknowledgements](#acknowledgements)
+* [Contact](#contact)
+<!-- * [License](#license) -->
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Technologies Used
+- flutter_staggered_grid_view: ^0.4.0
+- smooth_page_indicator: ^1.0.0+2
+- provider: ^6.0.3
+- shared_preferences: ^2.0.15
+- firebase_core: ^1.17.1
+- firebase_storage: ^10.2.17
+- cached_network_image:
+- cloud_firestore: ^3.1.13
+- flutter_staggered_grid_view: ^0.4.0
+- intl: ^0.17.0
+- badges: ^2.0.3
+- marquee:
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Screenshots
+<div class="row">
+    <img src="https://github.com/MahmoudEzzElden/la_carne/blob/master/screenshots/first.jpg" width="200" height="400" />
+    <img src="https://github.com/MahmoudEzzElden/la_carne/blob/master/screenshots/last.jpg" width="200" height="400" />
+    <img src="https://github.com/MahmoudEzzElden/la_carne/blob/master/screenshots/home1.jpg" width="200" height="400" />
+</div>
+<div class="row">
+    <img src="https://github.com/MahmoudEzzElden/la_carne/blob/master/screenshots/home.jpg" width="200" height="400" />
+    <img src="https://github.com/MahmoudEzzElden/la_carne/blob/master/screenshots/favourites.jpg" width="200" height="400" />
+    <img src="https://github.com/MahmoudEzzElden/la_carne/blob/master/screenshots/cart.jpg" width="200" height="400" />
+</div>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
+## Acknowledgements
+- Many thanks to  my mentor Engineer Mahmoud El Shenawy.
+
+
+## Contact
+Created by [mahmoudfarid931@gmail.com] feel free to contact me!
+
+
+
+
