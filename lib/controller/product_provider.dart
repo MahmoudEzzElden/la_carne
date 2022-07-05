@@ -15,10 +15,11 @@ class ProductProvider with ChangeNotifier{
    Future getCartAndFavCounts()async{
      counts= await  FirebaseHandler.getCounts();
      favouritesCount=counts![0];
-     cartCount=counts![1];
+    cartCount=counts![1];
 
      notifyListeners();
    }
+
 
 
 

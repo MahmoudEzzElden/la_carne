@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
         return (await showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text('You realy want to Leave?'),
+            title: Text('You really want to Leave?'),
             actions: [
               TextButton(
                   onPressed: () {
@@ -79,7 +79,7 @@ appBar: AppBar(
           showDialog(
             context: context,
             builder: (context) => AlertDialog(
-              title: Text('You realy want to Log out?'),
+              title: Text('You really want to Log out?'),
               actions: [
                 TextButton(
                     onPressed: () async {

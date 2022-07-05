@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:la_carne/services/constant.dart';
 
 class FirebaseHandler {
@@ -38,13 +39,16 @@ static Future getTotalPrice()async{
     var cartResult=await FirebaseFirestore.instance
         .collection(productsCollection)
         .where(inCart, isEqualTo: true).get();
+    cartResult.docs.forEach((element) {
+      cartCount+=
+      element.data()[quantityInCart] as int;
+    });
    favCount= favResult.docs.length;
-   cartCount = cartResult.docs.length;
+
 
     return
       [favCount,cartCount];
   }
-
 
   static favouriteUpdate(String documentId,bool result){
     FirebaseFirestore.instance.collection(productsCollection).doc(documentId).update({
